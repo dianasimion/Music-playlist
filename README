@@ -1,0 +1,48 @@
+	Simion Diana-Maria 
+    	311CA
+
+				Tema #1 - Music Playlist
+
+		Acesta este README-ul atasat rezolvarii temei 1 si explica atat implementarea 	
+	aleasa pentru crearea playlist-ului, cat si descrierea arhivei in care se
+	afla sursele.
+
+		Arhiva prezinta urmatoarele fisiere:
+			- playlist.c (sursa in care se afla functia main)
+			- data.c, show.c, delete.c, add.c (si fisierele .h) in care am
+			  implementat functionalitatile cerute in enunt
+			- fisierul Makefile care contine 2 instructiuni de baza pentru
+			  executarea programelor: 
+                        			- build (compileaza programul si creeaza
+                                 			executabilul corespunzator)
+						- clean (sterge executabilul creat si
+							 fisierele obiect generate)
+			  Acesta contine de asemenea dependintele corespunzatoare crearii 
+			  fiecarui fiser obiect creat la compilarea surselor .c
+
+			- fisierul README care contine explicatiile necesare intelegerii
+			  codului si a implementarii alese
+
+		Pentru a crea playlist-ul, l-am asociat cu o lista dublu inlantuita, care are
+	head, tail si cursor. Astfel, melodiile sunt asociate nodurilor care retin informatii
+	despre melodie, adresa urmatoarei melodii si a melodiei precedente. Structura in care
+	am retinut informatii despre melodie contine numele melodiei, artistul, albumul si anul
+	lansarii.
+		Inainte de a implementa functionalitatile dorite, am creat functii pentru
+	initiallizarea listei si pentru eliberarea memoriei. De asemenea, pentru comenzile citite
+	din fisierul de intrare, am retinut comanda si datele despre melodie daca comanda este de
+	tip ADD sau DEL_SONG. Pentru a putea opera cu datele melodiei, am accesat fisierul binar
+	corespunzator fiecarei melodii din directorul songs, si am ignorat continutul garbage
+	prin pozitionarea la finalul fisierului, apoi mutarea cu 94 de bytes inapoi.
+		Am respectat regulile impuse pentru adaugarea, stergerea si mutarea cursorului, 
+	si am tratat situatiile speciale, explicand in comentarii modalitatea de abordare. Pentru
+	adugarea unei melodii deja existente, am sters-o si adaugat-o pe noua pozitie dorita.
+	Pentru adugarea si stergerea simple, am procedat conform aplicatiilor listelor dublu
+	inlantuite.
+		Astfel, in playlist.c am prelucrat datele de intrare si de iesire, in data.c am
+	declarat structurile, functiile de initilizare si eliberare a memorie, dar si comenzile de 
+	mutare a cursorului, in show.c am implementat functiile de afisarea informatiilor despre
+	melodii, in delete.c pe cele de stergere, iar in add.c pe cele de adaugare a melodiilor
+	in playlist.
+
+
